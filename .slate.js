@@ -64,7 +64,7 @@ function getWindowsOnScreen(screenId) {
   var currentScreenId = screenId === void 0 ? slate.screen().id() : screenId;
   slate.eachApp(function(app) {
     app.eachWindow(function(win) {
-      if (win.screen().id() === currentScreenId) {
+      if (win.screen().id() === currentScreenId && !win.isMinimizedOrHidden()) {
         windows.push(win);
       }
     });
