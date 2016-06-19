@@ -10,6 +10,17 @@ slate.bind('8:ctrl;alt', focusNthWindow(7));
 slate.bind('9:ctrl;alt', focusNthWindow(8));
 slate.bind('0:ctrl;alt', focusNthWindow(9));
 
+slate.bind('1:ctrl;alt;shift', focusNthWindow(0, 0));
+slate.bind('2:ctrl;alt;shift', focusNthWindow(0, 1));
+slate.bind('3:ctrl;alt;shift', focusNthWindow(0, 2));
+slate.bind('4:ctrl;alt;shift', focusNthWindow(0, 3));
+slate.bind('5:ctrl;alt;shift', focusNthWindow(0, 4));
+slate.bind('6:ctrl;alt;shift', focusNthWindow(0, 5));
+slate.bind('7:ctrl;alt;shift', focusNthWindow(0, 6));
+slate.bind('8:ctrl;alt;shift', focusNthWindow(0, 7));
+slate.bind('9:ctrl;alt;shift', focusNthWindow(0, 8));
+slate.bind('0:ctrl;alt;shift', focusNthWindow(0, 9));
+
 slate.bind('left:ctrl;alt;shift', focusWindowOnNeighboringScreen(prevScreen));
 slate.bind('right:ctrl;alt;shift', focusWindowOnNeighboringScreen(nextScreen));
 
