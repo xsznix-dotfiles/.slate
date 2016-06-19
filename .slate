@@ -1,0 +1,118 @@
+# Configs
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+config keyboardLayout dvorak
+
+# Predefined Positions
+#alias pos-contacts  move screenOriginX;screenOriginY  150;screenSizeY
+#alias pos-chats     move screenOriginX+150;screenOriginY 500;500
+#alias res-terminal  move windowTopLeftX;windowTopLeftY 570;456
+
+alias fourthX screenSizeX/4
+alias thirdX  screenSizeX/3
+alias halfX   screenSizeX/2
+alias halfY   screenSizeY/2
+
+alias size-fourth-short ${fourthX};${halfY}
+alias size-fourth-tall  ${fourthX};screenSizeY
+alias size-three-fourth-short ${fourthX}*3;${halfY}
+alias size-three-fourth-tall  ${fourthX}*3;screenSizeY
+alias size-third-short ${thirdX};${halfY}
+alias size-third-tall  ${thirdX};screenSizeY
+alias size-two-third-short ${thirdX}*2;${halfY}
+alias size-two-third-tall  ${thirdX}*2;screenSizeY
+alias size-half-short  ${halfX};${halfY}
+alias size-half-tall   ${halfX};screenSizeY
+
+alias pos-4tl move screenOriginX;screenOriginY                       ${size-fourth-short}
+alias pos-4tp move screenOriginX+${fourthX};screenOriginY            ${size-fourth-short}
+alias pos-4ts move screenOriginX+${fourthX}*2;screenOriginY          ${size-fourth-short}
+alias pos-4tr move screenOriginX+${fourthX}*3;screenOriginY          ${size-fourth-short}
+alias pos-4bl move screenOriginX;screenOriginY+${halfY}              ${size-fourth-short}
+alias pos-4bp move screenOriginX+${fourthX};screenOriginY+${halfY}   ${size-fourth-short}
+alias pos-4bs move screenOriginX+${fourthX}*2;screenOriginY+${halfY} ${size-fourth-short}
+alias pos-4br move screenOriginX+${fourthX}*3;screenOriginY+${halfY} ${size-fourth-short}
+
+alias pos-4fl move screenOriginX;screenOriginY                       ${size-fourth-tall}
+alias pos-4fp move screenOriginX+${fourthX};screenOriginY            ${size-fourth-tall}
+alias pos-4fs move screenOriginX+${fourthX}*2;screenOriginY          ${size-fourth-tall}
+alias pos-4fr move screenOriginX+${fourthX}*3;screenOriginY          ${size-fourth-tall}
+
+alias pos-4tw move screenOriginX+${fourthX};screenOriginY            ${size-three-fourth-short}
+alias pos-4bw move screenOriginX+${fourthX};screenOriginY+${halfY}   ${size-three-fourth-short}
+alias pos-4fw move screenOriginX+${fourthX};screenOriginY            ${size-three-fourth-tall}
+
+alias pos-4tc move screenOriginX+${fourthX};screenOriginY            ${size-half-short}
+alias pos-4bc move screenOriginX+${fourthX};screenOriginY+${halfY}   ${size-half-short}
+alias pos-4fc move screenOriginX+${fourthX};screenOriginY            ${size-half-tall}
+
+alias pos-3tl move screenOriginX;screenOriginY                       ${size-third-short}
+alias pos-3tc move screenOriginX+${thirdX};screenOriginY             ${size-third-short}
+alias pos-3tr move screenOriginX+${thirdX}*2;screenOriginY           ${size-third-short}
+alias pos-3bl move screenOriginX;screenOriginY+${halfY}              ${size-third-short}
+alias pos-3bc move screenOriginX+${thirdX};screenOriginY+${halfY}    ${size-third-short}
+alias pos-3br move screenOriginX+${thirdX}*2;screenOriginY+${halfY}  ${size-third-short}
+
+alias pos-3fl move screenOriginX;screenOriginY                       ${size-third-tall}
+alias pos-3fc move screenOriginX+${thirdX};screenOriginY             ${size-third-tall}
+alias pos-3fr move screenOriginX+${thirdX}*2;screenOriginY           ${size-third-tall}
+
+alias pos-3tw move screenOriginX+${thirdX};screenOriginY             ${size-two-third-short}
+alias pos-3bw move screenOriginX+${thirdX};screenOriginY+${halfY}    ${size-two-third-short}
+alias pos-3fw move screenOriginX+${thirdX};screenOriginY             ${size-two-third-tall}
+
+alias pos-2tl move screenOriginX;screenOriginY                       ${size-half-short}
+alias pos-2tr move screenOriginX+${halfX};screenOriginY              ${size-half-short}
+alias pos-2bl move screenOriginX;screenOriginY+${halfY}              ${size-half-short}
+alias pos-2br move screenOriginX+${halfX};screenOriginY+${halfY}     ${size-half-short}
+alias pos-2fl move screenOriginX;screenOriginY                       ${size-half-tall}
+alias pos-2fr move screenOriginX+${halfX};screenOriginY              ${size-half-tall}
+
+alias pos-ful move screenOriginX;screenOriginY screenSizeX;screenSizeY
+
+bind f1:cmd;ctrl  ${pos-4tl}
+bind f2:cmd;ctrl  ${pos-4tp}
+bind f3:cmd;ctrl  ${pos-4ts}
+bind f4:cmd;ctrl  ${pos-4tr}
+bind f5:cmd;ctrl  ${pos-4bl}
+bind f6:cmd;ctrl  ${pos-4bp}
+bind f7:cmd;ctrl  ${pos-4bs}
+bind f8:cmd;ctrl  ${pos-4br}
+
+bind f9:cmd;ctrl  ${pos-4fl}
+bind f10:cmd;ctrl ${pos-4fp}
+bind f11:cmd;ctrl ${pos-4fs}
+bind f12:cmd;ctrl ${pos-4fr}
+
+bind f1:cmd       ${pos-3tl}
+bind f2:cmd       ${pos-3tc}
+bind f3:cmd       ${pos-3tr}
+bind f4:cmd       ${pos-3bl}
+bind f5:cmd       ${pos-3bc}
+bind f6:cmd       ${pos-3br}
+
+bind f7:cmd       ${pos-3fl}
+bind f8:cmd       ${pos-3fc}
+bind f9:cmd       ${pos-3fr}
+
+bind f10:cmd      ${pos-3tw}
+bind f11:cmd      ${pos-3bw}
+bind f12:cmd      ${pos-3fw}
+
+bind f13:cmd      ${pos-ful}
+
+bind f1:ctrl      ${pos-2tl}
+bind f2:ctrl      ${pos-2tr}
+bind f3:ctrl      ${pos-2bl}
+bind f4:ctrl      ${pos-2br}
+bind f5:ctrl      ${pos-2fl}
+bind f6:ctrl      ${pos-2fr}
+
+bind f7:ctrl      ${pos-4tc}
+bind f8:ctrl      ${pos-4bc}
+bind f9:ctrl      ${pos-4fc}
+
+bind f10:ctrl      ${pos-4tw}
+bind f11:ctrl      ${pos-4bw}
+bind f12:ctrl      ${pos-4fw}
