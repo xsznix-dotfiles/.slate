@@ -52,6 +52,7 @@ function focusNthWindow(n, screenId) {
     var wins = getWindowsOnScreen(screenId);
     if (wins.length > n) {
       wins[n].focus();
+      wins[n].focus();
       return true;
     } else {
       return false;
