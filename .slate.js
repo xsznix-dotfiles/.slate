@@ -21,8 +21,8 @@ slate.bind('8:ctrl;alt;shift', focusNthWindow(0, 7));
 slate.bind('9:ctrl;alt;shift', focusNthWindow(0, 8));
 slate.bind('0:ctrl;alt;shift', focusNthWindow(0, 9));
 
-slate.bind('left:ctrl;alt;shift', focusWindowOnNeighboringScreen(prevScreen));
-slate.bind('right:ctrl;alt;shift', focusWindowOnNeighboringScreen(nextScreen));
+//slate.bind('left:ctrl;alt;shift', focusWindowOnNeighboringScreen(prevScreen));
+//slate.bind('right:ctrl;alt;shift', focusWindowOnNeighboringScreen(nextScreen));
 
 function focusWindowOnNeighboringScreen(iterator) {
   return function() {
