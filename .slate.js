@@ -21,8 +21,10 @@ slate.bind('8:ctrl;alt;shift', focusNthWindow(0, 7));
 slate.bind('9:ctrl;alt;shift', focusNthWindow(0, 8));
 slate.bind('0:ctrl;alt;shift', focusNthWindow(0, 9));
 
-//slate.bind('left:ctrl;alt;shift', focusWindowOnNeighboringScreen(prevScreen));
-//slate.bind('right:ctrl;alt;shift', focusWindowOnNeighboringScreen(nextScreen));
+//slate.bind('left:ctrl;alt;shift', focusWindowOnNeighboringScreen(prevIter));
+//slate.bind('right:ctrl;alt;shift', focusWindowOnNeighboringScreen(nextIter));
+slate.bind('left:ctrl;alt;shift', focusNeighboringWindow(prevIter));
+slate.bind('right:ctrl;alt;shift', focusNeighboringWindow(nextIter));
 
 function focusWindowOnNeighboringScreen(iterator) {
   return function() {
@@ -39,12 +41,36 @@ function focusWindowOnNeighboringScreen(iterator) {
   }
 }
 
-function prevScreen(i, count) {
+function prevIter(i, count) {
   return (i - 1 + count) % count;
 }
 
-function nextScreen(i, count) {
+function nextIter(i, count) {
   return (i + 1) % count;
+}
+
+function focusNeighboringWindow(iterator) {
+  return function() {
+    var curr = slate.window();
+    var currRect = curr.rect();
+    var currPid = curr.pid();
+    var sid = curr.screen().id();
+    var wins = getWindowsOnScreen(sid);
+    wins.every(function(win, i) {
+      var rect = win.rect();
+      if (rect.x == currRect.x &&
+          rect.y == currRect.y &&
+          rect.width == currRect.width &&
+          rect.height == currRect.height &&
+          win.pid() == currPid) {
+        wins[iterator(i, wins.length)].focus();
+        wins[iterator(i, wins.length)].focus();
+        return false;
+      } else {
+        return true;
+      }
+    });
+  }
 }
 
 function focusNthWindow(n, screenId) {
